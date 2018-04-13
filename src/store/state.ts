@@ -26,6 +26,10 @@ const state: IState = {
         avatar: '',
         materials: [],
         steps: []
+    },
+    rankDetail: {
+        title: '',
+        explore: []
     }
 };
 

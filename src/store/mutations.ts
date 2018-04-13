@@ -1,5 +1,5 @@
 import * as types from './mutation-types';
-import { IState, HomeItem, Category, CategoryListItem, MenuDetail } from '../interface/store';
+import { IState, HomeItem, Category, CategoryListItem, MenuDetail, RankDetail } from '../interface/store';
 import { MutationTree } from 'vuex';
 
 const mutations: MutationTree<any> = {
@@ -23,6 +23,9 @@ const mutations: MutationTree<any> = {
     },
     [types.SET_MENU_DETAIL](state: IState, detail: MenuDetail) {
         state.menuDetail = detail;
+    },
+    [types.SET_RANK_DETAIL](state: IState, detail: RankDetail) {
+        state.rankDetail = detail;
     }
 };
 

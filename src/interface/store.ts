@@ -60,6 +60,20 @@ export interface MenuDetail {
     steps: Step[];
 };
 
+export interface ExploreDetail {
+    imgUrl: string;
+    menuName: string;
+    author: string;
+    doneNum: string;
+    authorImg: string;
+    href: string;
+};
+
+export interface RankDetail {
+    title: string;
+    explore: ExploreDetail[];
+};
+
 export interface IState {
     rankMenu: HomeItem;
     popMenu: HomeItem;
@@ -68,4 +82,5 @@ export interface IState {
     categoryItemTitle: string;
     categoryItemList: CategoryListItem[];
     menuDetail: MenuDetail;
+    rankDetail: RankDetail;
 };
