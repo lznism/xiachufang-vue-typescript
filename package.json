@@ -13,12 +13,14 @@
     "axios": "^0.18.0",
     "vue": "^2.5.2",
     "vue-class-component": "^6.1.2",
+    "vue-lazyload": "^1.2.2",
     "vue-property-decorator": "^6.0.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "vuex-class": "^0.3.0"
   },
   "devDependencies": {
+    "@types/node": "^9.6.4",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",

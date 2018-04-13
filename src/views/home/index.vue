@@ -28,14 +28,90 @@
             </div>
             <router-link tag="div" class="all-category" to="/category">全部菜谱分类</router-link>
         </section>
+        <section class="list">
+            <h3>菜谱榜单</h3>
+            <div class="list-head">
+                <router-link tag="div" :to="item.href" class="head-item" v-for="(item, index) in rankMenu.head" :key="index">
+                    <img v-lazy="item.imgUrl">
+                    <p class="title">{{item.title}}</p>
+                    <p class="desc">{{item.description}}</p>
+                </router-link>
+            </div>
+            <div class="list-body">
+                <router-link tag="div" class="body-item" :to="item.href" v-for="(item, index) in rankMenu.body" :key="index">
+                    <img v-lazy="item.imgUrl">
+                    <div class="content">
+                        <p class="title">{{item.title}}</p>
+                        <p class="desc">
+                            <span v-if="item.rate">评分{{item.rate}}</span>
+                            <span v-if="item.doneNum">{{item.doneNum}}人做过</span>
+                        </p>
+                    </div>
+                </router-link>
+            </div>
+        </section>
+        <section class="list">
+            <h3>流行菜单</h3>
+            <div class="list-head">
+                <div class="head-item" v-for="(item, index) in popMenu.head" :key="index">
+                    <img v-lazy="item.imgUrl">
+                    <p class="title">{{item.title}}</p>
+                    <p class="desc">{{item.description}}</p>
+                </div>
+            </div>
+            <div class="list-body">
+                <router-link tag="div" class="body-item" :to="item.href" v-for="(item, index) in popMenu.body" :key="index">
+                    <img v-lazy="item.imgUrl">
+                    <div class="content">
+                        <p class="title">{{item.title}}</p>
+                        <p class="desc">
+                            <span v-if="item.rate">评分{{item.rate}}</span>
+                            <span v-if="item.doneNum">{{item.doneNum}}人做过</span>
+                        </p>
+                    </div>
+                </router-link>
+            </div>
+        </section>
+        <section class="list">
+            <h3>新秀菜单</h3>
+            <div class="list-head">
+                <div class="head-item" v-for="(item, index) in risingMenu.head" :key="index">
+                    <img v-lazy="item.imgUrl">
+                    <p class="title">{{item.title}}</p>
+                    <p class="desc">{{item.description}}</p>
+                </div>
+            </div>
+            <div class="list-body">
+                <router-link tag="div" :to="item.href" class="body-item" v-for="(item, index) in risingMenu.body" :key="index">
+                    <img v-lazy="item.imgUrl">
+                    <div class="content">
+                        <p class="title">{{item.title}}</p>
+                        <p class="desc">
+                            <span v-if="item.rate">评分{{item.rate}}</span>
+                            <span v-if="item.doneNum">{{item.doneNum}}人做过</span>
+                        </p>
+                    </div>
+                </router-link>
+            </div>
+        </section>
     </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import { Action, Getter } from 'vuex-class';
 
 @Component({})
 export default class Home extends Vue {
+    @Action getHome;
+    @Getter rankMenu;
+    @Getter popMenu;
+    @Getter risingMenu;
+
+    created() {
+        this.getHome();
+    }
+    
     setTitle(name) {
         console.log(name);
     }

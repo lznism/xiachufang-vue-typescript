@@ -13,7 +13,7 @@ interface HomeBodyItem {
     doneNum: string;
 };
 
-interface HomeItem {
+export interface HomeItem {
     head: HomeHeadItem[];
     body: HomeBodyItem[];
 }
