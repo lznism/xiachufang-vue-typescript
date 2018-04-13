@@ -1,13 +1,16 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld.vue';
+import Vue, { AsyncComponent } from 'vue';
+import Router, { RouteConfig, Route, NavigationGuard } from 'vue-router';
 
 Vue.use(Router);
 
-export default new Router({
-    routes: [{
-        path: '/',
-        name: 'HelloWorld',
-        component: HelloWorld
-    }]
+const routes: RouteConfig[] = [{
+    path: '/',
+    name: 'home',
+    component: () => import('@/views/home/index.vue')
+}];
+
+const router: Router = new Router({
+    routes
 });
+
+export default router;
