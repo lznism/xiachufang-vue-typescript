@@ -15,7 +15,18 @@ const state: IState = {
     },
     category: [],
     categoryItemTitle: '',
-    categoryItemList: []
+    categoryItemList: [],
+    menuDetail: {
+        headImgUrl: '',
+        title: '',
+        rate: '',
+        doneNum: '',
+        description: '',
+        author: '',
+        avatar: '',
+        materials: [],
+        steps: []
+    }
 };
 
 export default state;

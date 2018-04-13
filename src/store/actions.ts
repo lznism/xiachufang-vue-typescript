@@ -49,6 +49,18 @@ const actions: ActionTree<any, any> = {
         } else {
             console.error(result.message);
         }
+    },
+
+    async getMenuDetail({commit}, id) {
+        const result: HttpResponse = await http.get(`/detail/${id}`)
+            .then(res => res)
+            .catch(err => ({code: -1, message: err}));
+        
+        if (result.code === 0) {
+            commit(types.SET_MENU_DETAIL, result.data);
+        } else {
+            console.error(result.message);
+        }
     }
 };
 

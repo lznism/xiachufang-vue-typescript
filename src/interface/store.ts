@@ -19,6 +19,17 @@ interface CategoryInfoItem {
     title: string;
 };
 
+export interface Material {
+    ingredient: string;
+    weight: string;
+};
+
+export interface Step {
+    subTitle: string;
+    description: String;
+    stepImg?: string;
+}
+
 export interface CategoryListItem {
     href: string;
     imgUrl: string;
@@ -35,7 +46,19 @@ export interface Category {
 export interface HomeItem {
     head: HomeHeadItem[];
     body: HomeBodyItem[];
-}
+};
+
+export interface MenuDetail {
+    headImgUrl?: string;
+    title: string;
+    rate: string;
+    doneNum: string;
+    description: string;
+    author: string;
+    avatar: string;
+    materials: Material[];
+    steps: Step[];
+};
 
 export interface IState {
     rankMenu: HomeItem;
@@ -44,4 +67,5 @@ export interface IState {
     category: Category[];
     categoryItemTitle: string;
     categoryItemList: CategoryListItem[];
+    menuDetail: MenuDetail;
 };

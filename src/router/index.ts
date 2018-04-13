@@ -27,6 +27,10 @@ const routes: RouteConfig[] = [{
         name: 'category-item:recent',
         component: () => import('@/views/category-item/recent.vue')
     }]
+}, {
+    path: '/recipe/:id',
+    name: 'menu-item',
+    component: () => import('@/views/menu-item/index.vue')
 }];
 
 const router: Router = new Router({
