@@ -13,7 +13,9 @@ const state: IState = {
         head: [],
         body: []
     },
-    category: []
+    category: [],
+    categoryItemTitle: '',
+    categoryItemList: []
 };
 
 export default state;

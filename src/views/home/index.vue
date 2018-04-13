@@ -99,7 +99,8 @@
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import { Action, Getter } from 'vuex-class';
+import { Action, Getter, Mutation } from 'vuex-class';
+import { SET_CATEGORY_ITEM_TITLE } from '../../store/mutation-types';
 
 @Component({})
 export default class Home extends Vue {
@@ -107,13 +108,10 @@ export default class Home extends Vue {
     @Getter rankMenu;
     @Getter popMenu;
     @Getter risingMenu;
+    @Mutation(SET_CATEGORY_ITEM_TITLE) setTitle;
 
     created() {
         this.getHome();
-    }
-    
-    setTitle(name) {
-        console.log(name);
     }
 };
 </script>

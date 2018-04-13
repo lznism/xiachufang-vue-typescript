@@ -19,6 +19,14 @@ interface CategoryInfoItem {
     title: string;
 };
 
+export interface CategoryListItem {
+    href: string;
+    imgUrl: string;
+    title: string;
+    rate: string;
+    doneNum: string;
+};
+
 export interface Category {
     title: string;
     info: CategoryInfoItem[];
@@ -34,4 +42,6 @@ export interface IState {
     popMenu: HomeItem;
     risingMenu: HomeItem;
     category: Category[];
+    categoryItemTitle: string;
+    categoryItemList: CategoryListItem[];
 };

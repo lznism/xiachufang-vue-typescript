@@ -11,6 +11,22 @@ const routes: RouteConfig[] = [{
     path: '/category',
     name: 'category',
     component: () => import('@/views/category/index.vue')
+}, {
+    path: '/category/:id',
+    redirect: '/category/:id/pop'
+}, {
+    path: '/category/:id',
+    name: 'category-item',
+    component: () => import('@/views/category-item/index.vue'),
+    children: [{
+        path: 'pop',
+        name: 'category-item:pop',
+        component: () => import('@/views/category-item/pop.vue')
+    }, {
+        path: 'recent',
+        name: 'category-item:recent',
+        component: () => import('@/views/category-item/recent.vue')
+    }]
 }];
 
 const router: Router = new Router({

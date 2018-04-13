@@ -37,6 +37,18 @@ const actions: ActionTree<any, any> = {
         } else {
             console.error(result.message);
         }
+    },
+
+    async getCategoryItemList({commit}, {id, type=''}) {
+        const result: HttpResponse = await http.get(`/category-item-list?id=${id}&type=${type}`)
+            .then(res => res)
+            .catch(err => ({code: -1, message: err}));
+        
+        if (result.code === 0) {
+            commit(types.SET_CATEGORY_ITEM_LIST, result.data);
+        } else {
+            console.error(result.message);
+        }
     }
 };
 

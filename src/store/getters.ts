@@ -1,5 +1,5 @@
 import { GetterTree } from 'vuex';
-import { IState, HomeItem, Category } from '../interface/store';
+import { IState, HomeItem, Category, CategoryListItem } from '../interface/store';
 
 const getters: GetterTree<any, any> = {
     rankMenu(state: IState): HomeItem {
@@ -13,6 +13,12 @@ const getters: GetterTree<any, any> = {
     },
     category(state: IState): Category[] {
         return state.category;
+    },
+    categoryItemTitle(state: IState): string {
+        return state.categoryItemTitle;
+    },
+    categoryItemList(state: IState): CategoryListItem[] {
+        return state.categoryItemList;
     }
 };
 
