@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "vue": "^2.5.2",
     "vue-class-component": "^6.1.2",
     "vue-property-decorator": "^6.0.0",
