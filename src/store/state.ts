@@ -12,7 +12,8 @@ const state: IState = {
     risingMenu: {
         head: [],
         body: []
-    }
+    },
+    category: []
 };
 
 export default state;

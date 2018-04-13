@@ -25,6 +25,18 @@ const actions: ActionTree<any, any> = {
         } else {
             console.error(result.message);
         }
+    },
+
+    async getCategory({commit}) {
+        const result: HttpResponse = await http.get('/category')
+            .then(res => res)
+            .catch(err => ({code: -1, message: err}));
+        
+        if (result.code === 0) {
+            commit(types.SET_CATEGORY, result.data);
+        } else {
+            console.error(result.message);
+        }
     }
 };
 

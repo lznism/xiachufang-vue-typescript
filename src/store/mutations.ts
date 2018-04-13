@@ -1,5 +1,5 @@
 import * as types from './mutation-types';
-import { IState, HomeItem } from '../interface/store';
+import { IState, HomeItem, Category } from '../interface/store';
 import { MutationTree } from 'vuex';
 
 const mutations: MutationTree<any> = {
@@ -11,6 +11,9 @@ const mutations: MutationTree<any> = {
     },
     [types.SET_RISING_MENU](state: IState, risingMenu: HomeItem) {
         state.risingMenu = risingMenu;
+    },
+    [types.SET_CATEGORY](state: IState, category: Category[]) {
+        state.category = category;
     }
 };
 

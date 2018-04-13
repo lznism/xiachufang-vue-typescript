@@ -13,6 +13,17 @@ interface HomeBodyItem {
     doneNum: string;
 };
 
+interface CategoryInfoItem {
+    href: string;
+    imgUrl: string;
+    title: string;
+};
+
+export interface Category {
+    title: string;
+    info: CategoryInfoItem[];
+};
+
 export interface HomeItem {
     head: HomeHeadItem[];
     body: HomeBodyItem[];
@@ -22,4 +33,5 @@ export interface IState {
     rankMenu: HomeItem;
     popMenu: HomeItem;
     risingMenu: HomeItem;
+    category: Category[];
 };
