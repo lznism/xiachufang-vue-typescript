@@ -3,6 +3,7 @@
         <header>
             <img src="../../assets/images/logo.png" alt="logo" class="logo">
         </header>
+        <search></search>
         <section class="category">
             <div class="row">
                 <router-link tag="div" @click.native="setTitle('家常菜')" to="/category/40076" class="category-item">
@@ -101,8 +102,11 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Action, Getter, Mutation } from 'vuex-class';
 import { SET_CATEGORY_ITEM_TITLE } from '../../store/mutation-types';
+import Search from '../../components/search.vue';
 
-@Component({})
+@Component({
+    components: {Search}
+})
 export default class Home extends Vue {
     @Action getHome;
     @Getter rankMenu;

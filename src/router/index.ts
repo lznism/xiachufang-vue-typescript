@@ -35,6 +35,10 @@ const routes: RouteConfig[] = [{
     path: '/explore/:type',
     name: 'explore',
     component: () => import('@/views/rank-detail/index.vue')
+}, {
+    path: '/search',
+    name: 'search',
+    component: () => import('@/views/search-result/index.vue')
 }];
 
 const router: Router = new Router({

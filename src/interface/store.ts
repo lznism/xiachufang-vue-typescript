@@ -74,6 +74,14 @@ export interface RankDetail {
     explore: ExploreDetail[];
 };
 
+export interface SearchResultItem {
+    href: string;
+    imgUrl: string;
+    title: string;
+    rate: string;
+    doneNum: string;
+};
+
 export interface IState {
     rankMenu: HomeItem;
     popMenu: HomeItem;
@@ -83,4 +91,5 @@ export interface IState {
     categoryItemList: CategoryListItem[];
     menuDetail: MenuDetail;
     rankDetail: RankDetail;
+    searchResults: SearchResultItem[];
 };

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { ActionTree } from 'vuex';
 import http from '../utils/http';
 import { HttpResponse } from '../interface/request';
+import router from '../router/index';
 import * as types from './mutation-types';
 
 const actions: ActionTree<any, any> = {
@@ -72,6 +73,22 @@ const actions: ActionTree<any, any> = {
             commit(types.SET_RANK_DETAIL, result.data);
         } else {
             console.error(result.message);
+        }
+    },
+
+    async getSearch({commit}, keyword) {
+        const result: HttpResponse = await http.get(`/search?keyword=${keyword}`)
+            .then(res => res)
+            .catch(err => ({code: -1, message: err}));
+        
+        if (result.code === 0) {
+            if (result.isRedirect) {
+                let url = result.redirectUrl.match(/\/category\/\d+/)[0];
+                router.push({path: url});
+            } else {
+                commit(types.SET_SEARCH_RESULT, result.data);
+                router.push({path: '/search', query: {keyword}});
+            }
         }
     }
 };

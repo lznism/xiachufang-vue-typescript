@@ -30,7 +30,8 @@ const state: IState = {
     rankDetail: {
         title: '',
         explore: []
-    }
+    },
+    searchResults: []
 };
 
 export default state;
